@@ -1,0 +1,57 @@
+<head>
+    <style>
+        html,
+        body,
+        input,
+        select,
+        textarea {
+            font-size: 1.05em;
+        }
+
+        .ro {
+            background-color: aquamarine;
+        }
+
+        .gridcontainer {
+
+            margin: 100px 50px;
+
+        }
+
+    </style>
+</head>
+
+<h1> this is second.</h1>
+
+<h3>{{ name }}</h3>
+
+
+<body>
+
+    <h3>Picture</h3>
+
+
+
+    <hr>
+
+    <div class="container">
+        <div>
+            <div class="gridcontainer container fluid">
+                <div class="row">
+
+                        <div ng-repeat="item in items">
+                            
+                            <p ng-if="item.show">
+                                <img ng-src="{{item.url}}" height="{{ item.height }}" width="{{ item.width }}" />
+                                {{item.name}}
+                            </p>
+                            <button ng-click="item.show = ! item.show">Display Image</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<hr>
+</body>
+
+</html>
