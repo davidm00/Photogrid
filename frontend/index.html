@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="myApp">
+
+<head>
+
+    <title>Photogrid</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+
+    <script src="app.js"></script>
+
+    <style>
+        .view-offset {
+
+            margin-top: 400px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">PhotoGrid</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#/main"><i class="fa fa-home"></i>Home</a></li>
+                    <li><a href="#/second">Second</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container view-offset">
+        <div ng-view></div>
+    </div>
+</body>
+
+</html>

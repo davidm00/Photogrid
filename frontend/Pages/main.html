@@ -1,0 +1,33 @@
+<h1 style="background-color: aqua">This is main.</h1>
+
+<h3>Interpolation: This is {{ name + '. Example 1.' }}</h3>
+
+<hr>
+
+<div>
+    <label>What is your twitter handle?</label>
+    <input type="text" ng-model="handle" />
+</div>
+
+<div class="alert" ng-class="{ 'alert-warning': handle.length < characters, 'alert-danger': handle.length > characters }" ng-show="handle.length !== characters">
+
+    <div ng-show="handle.length < characters">
+        less than 5 characters
+    </div>
+    <div ng-show="handle.length > characters">
+        more than 5 characters
+    </div>
+
+
+</div>
+
+<hr>
+
+<h1>twitter.com/{{ lowercasehandle() }}</h1>
+
+<h3>Rules</h3>
+<ul>
+    <li ng-repeat="rule in rules">
+        {{ rule.rulename }}
+    </li>
+</ul>
