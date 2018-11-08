@@ -2,6 +2,7 @@
 const express = require('express');
 const fs = require('fs');
 const imageData = require('./imageData');
+const colors = require('./colors.json');
 // Define variables
 const app = express();
 
@@ -19,6 +20,13 @@ app.get('/route', (req, res) => {
     fs.readFile('imageData.json', (err, data) => {
         if (err) console.error('There was an error,', err);
         res.send(imageData);
+    });
+});
+
+app.get('/getColors', (req, res) => {
+    fs.readFile('colors.json', (err, data) => {
+        if (err) console.error('There was an error,', err);
+        res.send(colors);
     });
 });
 const port = process.env.PORT || 3000;
