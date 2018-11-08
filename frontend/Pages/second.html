@@ -17,9 +17,9 @@
             margin: 100px 50px;
 
         }
-        
+
         img {
-            
+
             height: 200px;
             width: 200px;
             float: left;
@@ -46,19 +46,22 @@
             <div class="gridcontainer container fluid">
                 <div class="row">
 
-                        <div ng-repeat="item in items track by $index">
-                            
-                            <p>
-                                <img ng-src="{{item.url}}" height="{{ item.height }}" width="{{ item.width }}" />
+                    <div ng-repeat="item in items track by $index">
+
+                        
+                            <p>{{item.id}}</p>
+                            <p ng-if="item.show">
                                 {{item.name}}
                             </p>
-                            
-                        </div>
+                            <button ng-click="item.show = ! item.show">toggle</button>
+                        
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-<hr>
+    <hr>
 </body>
 
 </html>
