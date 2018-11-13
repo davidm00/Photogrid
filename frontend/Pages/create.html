@@ -1,0 +1,83 @@
+<head>
+    <style>
+        html,
+        body,
+        input,
+        select,
+        textarea {
+            font-size: 1.05em;
+        }
+
+        .ro {
+            background-color: aquamarine;
+        }
+
+        .gridcontainer {
+
+            margin: 100px 50px;
+
+        }
+
+        img {
+
+            height: 200px;
+            width: 200px;
+            float: left;
+        }
+
+    </style>
+</head>
+
+<h1> this is {{ name }}.</h1>
+
+
+<body>
+
+    <div class="container">
+        <div>
+            <div class="gridcontainer container fluid">
+                <div class="row">
+
+
+                    <div class="col-md-6">
+                        <div class="large-2 column"><label for="Search"> Search in below grid</label></div>
+                        <div class="large-4 column "><input type="text" class="form-control" placeholder="Search" data-ng-model="searchText"></div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <table width="100%" class="table">
+                        <thead>
+                            <tr>
+                                <th ng-repeat="(header, value) in items[0]">{{header}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="row in items | filter:searchText">
+                                <td ng-repeat="cell in row"> {{ cell }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <hr>
+
+                    <div ng-if="items.length < 9"></div>
+                    <div ng-repeat="item in items" style="padding:0px;" class="col col-25">
+                        <div style="background-image:url({{item.url}});
+                        background-repeat:no-repeat;
+                        background-size:contain; 
+                        display: block;
+                        width:100%;
+                        height:0;
+                        padding-top:100%">
+                        </div>
+                    </div>
+
+                    <hr>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</body>
+
+</html>

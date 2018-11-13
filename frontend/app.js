@@ -10,11 +10,14 @@ myApp.config(function ($routeProvider) {
             controller: 'mainController'
         })
 
-        .when('/second', {
+        .when('/create', {
+            templateUrl: 'Pages/create.html',
+            controller: 'createController'
+        })
 
-            templateUrl: 'Pages/second.html',
-            controller: 'secondController'
-
+        .when('/about', {
+            templateUrl: 'Pages/about.html',
+            controller: 'aboutController'
         })
 
 });
@@ -22,54 +25,13 @@ myApp.config(function ($routeProvider) {
 myApp.controller('mainController', ['$scope', '$filter', '$http', function ($scope, $filter, $http) {
 
     $scope.name = 'Main';
-    $scope.handle = '';
-
-    $scope.lowercasehandle = function () {
-
-        return $filter('lowercase')($scope.handle);
-
-    }
-
-    $scope.characters = 5;
-
-    $scope.rules = [
-
-        {
-            rulename: "Must be 5 characters."
-        },
-        {
-            rulename: "Must not be used elsewhere."
-        },
-        {
-            rulename: "Must be cool."
-        }
-
-    ];
-
-
-    /*$scope.$watch('handle', function(newValue, oldValue) {
-        
-        console.info('Changed!');
-        console.log('Old:' + oldValue);
-        console.log('New:' + newValue);
-        
-    });
-    */
 
 
 }]);
 
-myApp.controller('secondController', ['$scope', '$filter', '$http', function ($scope, $filter, $http) {
+myApp.controller('createController', ['$scope', '$filter', '$http', function ($scope, $filter, $http) {
 
-    $scope.name = 'Second';
-
-    $scope.lowercasehandle = function () {
-
-        return $filter('lowercase')($scope.handle);
-
-    }
-
-    $scope.characters = 5;
+    $scope.name = 'Create';
 
     $scope.item = [];
 
@@ -88,5 +50,11 @@ myApp.controller('secondController', ['$scope', '$filter', '$http', function ($s
         // or server returns response with an error status.
     });
 
+
+}]);
+
+myApp.controller('aboutController', ['$scope', '$http', function ($scope, $http) {
+
+    $scope.name = 'About';
 
 }]);
