@@ -1,39 +1,19 @@
 <head>
-    <style>
-        html,
-        body,
-        input,
-        select,
-        textarea {
-            font-size: 1.05em;
-        }
-
-        .ro {
-            background-color: aquamarine;
-        }
-
-        .gridcontainer {
-
-            margin: 100px 50px;
-
-        }
-
-        img {
-
-            height: 200px;
-            width: 200px;
-            float: left;
-        }
-
-    </style>
+    
 </head>
 
-<h1> this is {{ name }}.</h1>
 
+<div>
 
-<body>
+    <h1>This is {{ name }}.</h1>
 
-    <div class="container">
+    <hr>
+
+    <div class="gridcontainer">
+        <div  ng-repeat="item in items" ng-style="{'background-image': 'url({{ item.url }})' }" class="tile"></div>
+    </div>
+    
+    <!--<div class="container">
         <div>
             <div class="gridcontainer container fluid">
                 <div class="row">
@@ -76,8 +56,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    <hr>
-</body>
+    </div>-->
+</div>
 
 </html>
