@@ -34,7 +34,7 @@ myApp.controller('createController', ['$scope', '$filter', '$http', function ($s
     $scope.name = 'Create';
 
     $scope.item = [];
-    
+
     $http({
         method: 'GET',
         url: 'http://localhost:3000/route'
@@ -49,8 +49,18 @@ myApp.controller('createController', ['$scope', '$filter', '$http', function ($s
         // called asynchronously if an error occurs
         // or server returns response with an error status.
     });
-    
 
+    $scope.data = {};
+    $scope.submit = function () {
+        console.log('clicked submit');
+        $http({
+            url: 'http://localhost:3000/'.append($scope.data.link),
+            method: 'GET',
+            data: $scope.data
+        }).then(function (httpResponse) {
+            console.log('response:', httpResponse);
+        })
+    }
 
 }]);
 

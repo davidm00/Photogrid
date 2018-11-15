@@ -6,7 +6,20 @@
 <div>
 
     <h1>This is {{ name }}.</h1>
+    
+    <hr>
+    
+    <h2>File Uploader</h2>
 
+    <form>
+    
+        <div><strong>Link</strong></div>
+        <input type="text" name="Link" value="Link goes here!" ng-model="data.link">
+        
+        <input type="submit" value="gridify!" ng-click="submit()">
+    
+    </form>
+    
     <hr>
 
     <div class="gridcontainer">
