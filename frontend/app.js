@@ -5,7 +5,7 @@ myApp.config(function ($routeProvider) {
 
     $routeProvider
 
-        .when('/main', {
+        .when('/', {
             templateUrl: 'Pages/main.html',
             controller: 'mainController'
         })
@@ -19,6 +19,12 @@ myApp.config(function ($routeProvider) {
             templateUrl: 'Pages/about.html',
             controller: 'aboutController'
         })
+
+        .when('/main', {
+            templateUrl: 'Pages/main.html',
+            controller: 'mainController'
+        })
+
 
 });
 
@@ -50,11 +56,11 @@ myApp.controller('createController', ['$scope', '$filter', '$http', function ($s
         // or server returns response with an error status.
     });
 
-    $scope.data = {};
+    $scope.data = [];
     $scope.submit = function () {
         console.log('clicked submit');
         $http({
-            url: 'http://localhost:3000/'.append($scope.data.link),
+            url: 'http://localhost:3000/'.append(encodeURI($scope.data.link)),
             method: 'GET',
             data: $scope.data
         }).then(function (httpResponse) {

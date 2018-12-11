@@ -41,13 +41,13 @@
             grid-gap: 18px;
             grid-auto-flow: dense;
         }
-        
+
         .tile {
             position: relative;
             background-color: #149;
             text-align: center;
         }
-        
+
         .tile.chosen {
             grid-row: span 2;
             grid-column: span 2;
@@ -58,14 +58,49 @@
             width: 100%;
             height: 100%;
         }
-            
+
         img {
 
             height: 200px;
             width: 200px;
             float: left;
         }
-        
+
+        .pgrid {
+            position: relative;
+            animation-duration: 4s;
+            animation-name: slidein;
+        }
+
+        @keyframes slidein {
+            from {
+                margin-left: 100%;
+                width: 300%;
+
+            }
+
+            to {
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
+
+
+
+        h1 {
+            background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 60px;
+            line-height: 80px;
+        }
+
+        .container {
+
+            margin-bottom: 25px;
+
+        }
+
     </style>
 
 </head>
@@ -93,6 +128,8 @@
     <div class="container view-offset">
         <div ng-view></div>
     </div>
+
+    <!--<p>background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);</p>-->
 </body>
 
 </html>
